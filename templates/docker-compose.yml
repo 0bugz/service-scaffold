@@ -1,0 +1,16 @@
+version: '3'
+services:
+  {{service_name}}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - ${HOME_DIR}:/homedir
+    networks:
+     - {{network_name}}
+
+networks:
+  {{network_name}}:
+    external: true
